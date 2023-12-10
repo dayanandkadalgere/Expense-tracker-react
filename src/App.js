@@ -1,6 +1,8 @@
-import logo from './logo.svg';
-import ExpenseItem from './components/ExpenseItem';
-import Expenses from './components/Expenses';
+import logo from "./logo.svg";
+import ExpenseItem from "./components/Expenses/ExpenseItem";
+import Expenses from "./components/Expenses/Expenses";
+import NewExpenses from "./components/NewExpenses/NewExpenses";
+import { useState } from "react";
 
 const expenses = [
   {
@@ -26,9 +28,11 @@ const expenses = [
 
 function App() {
   return (
-      expenses.map((expense) => {
+    <>
+      <NewExpenses />
+      {expenses.map((expense) => {
         return (
-          <div>
+          <div key={expense.id} className="">
             <Expenses
               id={expense.id}
               title={expense.title}
@@ -37,7 +41,8 @@ function App() {
             />
           </div>
         );
-      })
+      })}
+    </>
   );
 }
 

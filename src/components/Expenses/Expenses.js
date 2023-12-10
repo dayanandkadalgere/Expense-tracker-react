@@ -1,8 +1,8 @@
-import ExpenseItem from "./ExpenseItem";
+import ExpenseItem from "../Expenses/ExpenseItem";
 
 const Expenses = (props) => {
   return (
-    <div>
+    <div className="bg-gray-300 p-2">
       <ExpenseItem
         id={props.id}
         key={props.id}
@@ -12,5 +12,5 @@ const Expenses = (props) => {
       />
     </div>
   );
-}
-export default Expenses
+};
+export default Expenses;
